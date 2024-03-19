@@ -1,15 +1,13 @@
-package com.pjh.sample;
+package com.pjh.basic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SampleApplicationTests 
-{
+class BasicApplicationTests {
 
 	@Test
-	void contextLoads() 
-	{
+	void contextLoads() {
 	}
 
 }

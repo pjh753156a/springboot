@@ -6,8 +6,10 @@ package 새.폴더;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class AppTest {
-    @Test void appHasAGreeting() {
+class AppTest 
+{
+    @Test void appHasAGreeting() 
+    {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
