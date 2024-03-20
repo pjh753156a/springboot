@@ -18,19 +18,22 @@ import org.springframework.web.bind.annotation.PutMapping;
 // 돌려주는 영역
 // - 각 요청에 해당하는 URL 메서드를 작성하는 영역
 
+//
 // @RestController: JSON 형태의 Response Body를 반환하는
 // controller임을 명시
 // @RestController = @Controller + @ResponseBody
 @RestController
 // @RequestMapping():HTTP 요청에 클래스와 메서드를 매핑하기 위한 어노테이션
 // @RequestMapping(value = "/main", method = {RequestMethod.GET})
+
+// HTTP localhost:4000/main/**
 @RequestMapping("/main")
 
 // HTTP GET localhost:4000/main/**
 public class BasicController 
 {
     // HTTP GET localhost:4000/main/
-    @RequestMapping(value = "/", method = {RequestMethod.GET})
+    @RequestMapping(value = "/////////////////", method = {RequestMethod.GET})
     public String getHello(){
         return "Hello Springboot!!";
     }
@@ -76,10 +79,10 @@ public class BasicController
         return "Delete Mapping 으로 만든 메서드";
     }
 
-    // Method + URL Pattern이 중복되면 런타임 중에 에러가 발생
+    // //Method + URL Pattern이 중복되면 런타임 중에 에러가 발생
     // @DeleteMapping("/apple")
     // // @DeleteMapping(): RequestMapping 기능을 Delete Method에 한정시킨 것(가독성+안정성)
     // public String deleteApple1(){
-    //     return "Delete Mapping 으로 만든 메서드";
-    // }////////////////////////////////////////////////////////springboot////////
+    //      return "Delete Mapping 으로 만든 메서드";
+    // }
 }
