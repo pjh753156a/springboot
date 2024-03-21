@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pjh.basic.controller.dto.SampleDto;
 
+import jakarta.validation.Valid;
+
 @RestController
 //HTTP * localhost:4000/request-data/**
 @RequestMapping("/request-data")
@@ -23,7 +25,7 @@ public class RequestDataController
     // 데이터를 가져오기 위해 사용
 
     // HTTP GET localhost:4000/request-data/request-param
-    @GetMapping("/request-param")
+    @GetMapping("request-param")
     // http://localhost:4000/request-data/request-param?userId=qwer?userName=gildong
     public String getRequestParam(
         @RequestParam(name="userId") String userId,
@@ -84,7 +86,8 @@ public class RequestDataController
     @PostMapping("/post")
     public String post(
         //@RequestBody String text
-        @RequestBody SampleDto dto
+        //!!! @Valid : 해당 payload에 대해서 유효성 검사를 실시하도록 함
+        @RequestBody @Valid SampleDto dto
     ) {
         return "전송한 데이터: "+dto.toString();
     }
