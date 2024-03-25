@@ -41,6 +41,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 public class BasicController 
 {
     // private BasicService service;
+
+    private final BasicService service;
     
     // 의존성 역전 (DI) :
     // -해당 클래스에 필요한 의존성을 외부(클래스의 인스턴스 생성하는 위치)에서 주입
@@ -53,15 +55,19 @@ public class BasicController
     // - 단, 생성자를 통한 의존성 주입에는 @Autowired를 생략해도 됨
 
     // @Autowired
-    // public BasicController(BasicService service){
-    //     this.service=service;
+    // public BasicController(BasicService service)
+    // {
+    //      this.service=service;
     // }
 
 
     // 의존성 주입시 클래스로 직접 참조변수를 만들지 않고 인터페이스로 간접적으로 만드는 이유:
     // 고수준의 모듈에서 저수준의 모듈을 직접 참조하지 않고 추상화를 통해 간접 참조함으로써
     // 각 모듈간의 결합도를 낮춤 -> 코드의 재사용성 향상, 유지보수성 향상
-    private final BasicService service;
+    // 
+   
+
+    // ==============================================================================================
 
     // HTTP GET localhost:4000/main/
     @RequestMapping(value = "/", method = {RequestMethod.GET})

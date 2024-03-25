@@ -67,3 +67,4 @@ public class SampleDto
     @Pattern(regexp = "^[a-zA-Z0-9]*@([-.]?[a-zA-Z0-9])*\\.[a-zA-Z]{2,4}$")
     private String emailPattern;
 }
+// !!! 완료

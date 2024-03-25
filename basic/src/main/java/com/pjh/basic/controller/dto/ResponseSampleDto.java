@@ -10,3 +10,4 @@ public class ResponseSampleDto
     private String data1;
     private Integer data2;
 }
+// !!!완료
