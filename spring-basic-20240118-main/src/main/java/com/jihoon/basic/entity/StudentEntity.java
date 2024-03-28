@@ -57,10 +57,12 @@ public class StudentEntity {
     private String address;
     private Boolean graduation;
 
-    public StudentEntity(PostStudentRequestDto dto) {
+    public StudentEntity(PostStudentRequestDto dto) 
+    {
         this.name = dto.getName();
         this.age = dto.getAge();
         this.address = dto.getAddress();
         this.graduation = dto.getGraduation();
     }
 }
+// !!!완료

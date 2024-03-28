@@ -24,3 +24,4 @@ public interface StudentRepository
 extends JpaRepository<StudentEntity, Integer> {
     
 }
+// 완료!!!
