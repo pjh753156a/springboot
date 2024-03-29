@@ -33,6 +33,7 @@ public class StudentServiceImplement implements StudentService {
     }
 
     // ==========================================================================
+    // UPDATE(SQL : UPDATE)
     @Override
     public ResponseEntity<String> patchStudent(PatchStudentRequestDto dto) 
     {
@@ -61,6 +62,7 @@ public class StudentServiceImplement implements StudentService {
     @Override
     public ResponseEntity<String> deleteStudent(Integer studentNumver) 
     {
+        // DELETE(SQL : DELETE)
         studentRepository.deleteById(studentNumver);
 
         return ResponseEntity.status(HttpStatus.OK).body("성공");
