@@ -41,6 +41,7 @@ public class BoardServiceImplementation implements BoardService {
         return GetLatestListResponseDto.success(latestList);
         // GetLatestListResponseDto body = new GetLatestListResponseDto(latestList);
         // return ResponseEntity.status(HttpStatus.OK).body(body);
+
     }
 
     
