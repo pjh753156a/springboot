@@ -3,6 +3,7 @@ package com.example.board.service.implementations;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.example.board.dto.request.user.PatchNicknameRequestDto;
 import com.example.board.dto.response.ResponseDto;
 import com.example.board.dto.response.user.GetUserResponseDto;
 import com.example.board.entity.UserEntity;
@@ -37,6 +38,31 @@ public class UserServiceImplementation implements UserService {
 
         } catch (Exception exception) {
             // 1-1. 조회 처리 중 데이터베이스 관련 예외가 발생하면 데이터베이스 에러 응답처리
+            exception.printStackTrace();
+            return ResponseDto.databaseError();
+        }
+
+    }
+
+    @Override
+    public ResponseEntity<ResponseDto> patchNickname(PatchNicknameRequestDto dto) {
+        
+        try {
+
+            String nickname = dto.getNickname();
+            boolean isExistNickname = userRepository.existsByNickname(nickname);
+            if (isExistNickname) return ResponseDto.duplicateNickname();
+            
+            String email = dto.getEmail();
+            UserEntity userEntity = userRepository.findByEmail(email);
+            if (userEntity == null) return ResponseDto.notExistUser();
+
+            userEntity.setNickname(nickname);
+            userRepository.save(userEntity);
+
+            return ResponseDto.success();
+
+        } catch (Exception exception) {
             exception.printStackTrace();
             return ResponseDto.databaseError();
         }
