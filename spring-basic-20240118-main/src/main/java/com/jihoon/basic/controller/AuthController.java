@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,5 +28,13 @@ public class AuthController
     ){
         return basicService.getJwt(principle);
     }
+
+    //!!! 여기부터 ???
+    @PostMapping("/validation")
+    public String jwtValidate(
+        @RequestBody String jwt
+    ){
+        return basicService.jwtValidate(jwt);
+    }
+    //??? 여기까지
 }
-// ???

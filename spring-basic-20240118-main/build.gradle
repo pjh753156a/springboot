@@ -28,10 +28,16 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	// RDBMS와 Java의 객체간 매핑을 위한 ORM 기술인 JPA 의존성
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// !!!???여기부터
+	// Java 기반의 보안 솔루션 프레임워크인 Spring Security 의존성
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	// !!!여기까지
+
 	// MySQL 연결을 위한 connector 의존성
 	runtimeOnly 'com.mysql:mysql-connector-j:8.0.33'
 
-	//!!!여기부터 Jwt 생성 및 검증을 위한 의존성
+	// Jwt 생성 및 검증을 위한 의존성
 	implementation group : 'io.jsonwebtoken', name: 'jjwt-api', version: '0.11.2'
 	implementation group : 'io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.2'
 	implementation group : 'io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.2'
@@ -49,4 +55,3 @@ tasks.named('bootBuildImage') {
 tasks.named('test') {
 	useJUnitPlatform()
 }
-// ???

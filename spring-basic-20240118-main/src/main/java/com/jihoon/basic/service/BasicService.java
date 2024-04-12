@@ -10,5 +10,7 @@ public interface BasicService
     String getApple();
 
     String getJwt(String priciple);
+    // ??? 여기부터
+    String jwtValidate(String jwt);
+    // !!! 여기까지
 }
-// ???
