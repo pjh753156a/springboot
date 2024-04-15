@@ -30,18 +30,15 @@ public class BasicServiceImplement implements BasicService {
     public String getApple() {
         return "Get Mapping 으로 만든 메서드";
     }
-    
+
     @Override
-    public String getJwt(String priciple)
-    {
+    public String getJwt(String priciple) {
         return jwtProvider.create(priciple);
     }
 
-    // ??? 여기부터
     @Override
-    public String jwtValidate(String jwt) 
-    {
+    public String jwtValidate(String jwt) {
         return jwtProvider.validation(jwt);
     }
-    // !!! 여기까지???
+    
 }

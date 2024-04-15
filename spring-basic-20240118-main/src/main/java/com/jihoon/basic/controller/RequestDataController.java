@@ -21,7 +21,7 @@ public class RequestDataController {
     
     // @RequestParam() : 
     // - GET, DELETE 처럼 URL로 데이터를 전송하는 메서드에서 Query String 으로 지정된
-    //    데이터를 가져오기 위해 사용
+    //   데이터를 가져오기 위해 사용
 
     // HTTP GET localhost:4000/request-data/request-param
     @GetMapping("/request-param")
@@ -38,7 +38,6 @@ public class RequestDataController {
     // 모든 HTTP 메서드에서 URL의 특정 패턴에 따라서 데이터를 추출하는 방식
 
     // HTTP DELETE localhost:4000/request-data/path-variable
-    
     @DeleteMapping({
         "/path-variable/{age}/{name}", 
         "/path-variable/{age}"
@@ -90,5 +89,3 @@ public class RequestDataController {
     }
 
 }
-
-// !!!완료

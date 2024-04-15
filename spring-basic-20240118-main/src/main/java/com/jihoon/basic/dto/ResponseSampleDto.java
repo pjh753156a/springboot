@@ -5,10 +5,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public class ResponseSampleDto 
-{
+public class ResponseSampleDto {
     private String data1;
     private Integer data2;
 }
-
-// !!!완료

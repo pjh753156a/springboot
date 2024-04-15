@@ -1,7 +1,6 @@
 package com.jihoon.basic.service;
 
-public interface BasicService 
-{
+public interface BasicService {
     // interface의 메서드는 반드시 public abstract이어야 함
     // public abstract String getHello();
 
@@ -10,7 +9,5 @@ public interface BasicService
     String getApple();
 
     String getJwt(String priciple);
-    // ??? 여기부터
     String jwtValidate(String jwt);
-    // !!! 여기까지
 }

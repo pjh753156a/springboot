@@ -1,7 +1,6 @@
 package com.jihoon.basic.service.implement;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -32,18 +31,17 @@ public class StudentServiceImplement implements StudentService {
         return ResponseEntity.status(HttpStatus.CREATED).body("성공!");
     }
 
-    // ==========================================================================
-    // UPDATE(SQL : UPDATE)
     @Override
-    public ResponseEntity<String> patchStudent(PatchStudentRequestDto dto) 
-    {
+    public ResponseEntity<String> patchStudent(PatchStudentRequestDto dto) {
+
         Integer studentNumber = dto.getStudentNumber();
         String address = dto.getAddress();
 
-        // 0. student 테이블에 해당하는 Primary key를 가지는 레코드가 존재하는지 확인
+        // 0. student 테이블에 해당하는 Prmary key를 가지는 레코드가 존재하는지 확인
         boolean isExistedStudent = studentRepository.existsById(studentNumber);
-        if(!isExistedStudent) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("존재하지 않는 학생입니다.");
+        if (!isExistedStudent) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("존재하지 않는 학생입니다.");
 
+        // UPDATE (SQL : UPDATE)
         // 1. student 클래스로 접근 (StudentRepository 사용)
         StudentEntity studentEntity = studentRepository.
         // 2. dto.studentNumber에 해당하는 인스턴스를 검색
@@ -54,16 +52,14 @@ public class StudentServiceImplement implements StudentService {
         // repository.save()는 레코드를 생성할 때 쓰이지만 수정할 때도 동일하게 사용됨
         studentRepository.save(studentEntity);
 
-       
         return ResponseEntity.status(HttpStatus.OK).body("성공!");
     }
-    
 
     @Override
-    public ResponseEntity<String> deleteStudent(Integer studentNumver) 
-    {
-        // DELETE(SQL : DELETE)
-        studentRepository.deleteById(studentNumver);
+    public ResponseEntity<String> deleteStudent(Integer studentNumber) {
+        
+        // DELETE (SQ : DELETE)
+        studentRepository.deleteById(studentNumber);
 
         return ResponseEntity.status(HttpStatus.OK).body("성공");
     }

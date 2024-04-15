@@ -48,7 +48,7 @@ public class StudentEntity {
     // - nullable 속성 : null 포함 가능 여부
     // - unique 속성 : unique 제약 여부
     // - lenght 속성 : 컬럼의 길이
-    // - 만약, 테이블의 컬럼명과 클래스의 필드명이 같으면 생략 가능 !!!!!
+    // - 만약, 테이블의 컬럼명과 클래스의 필드명이 같으면 생략 가능
     @Column(name="student_number", nullable=false, unique=true, insertable=false, updatable=false, length=10)
     private Integer studentNumber;
 
@@ -57,12 +57,10 @@ public class StudentEntity {
     private String address;
     private Boolean graduation;
 
-    public StudentEntity(PostStudentRequestDto dto) 
-    {
+    public StudentEntity(PostStudentRequestDto dto) {
         this.name = dto.getName();
         this.age = dto.getAge();
         this.address = dto.getAddress();
         this.graduation = dto.getGraduation();
     }
 }
-// !!!완료

@@ -47,8 +47,7 @@ public class StudentController {
         @PathVariable("studentNumber") Integer studentNumber
     ) {
         ResponseEntity<String> response = studentService.deleteStudent(studentNumber);
-         return response;
+        return response;
     }
     
 }
-// !!!완료

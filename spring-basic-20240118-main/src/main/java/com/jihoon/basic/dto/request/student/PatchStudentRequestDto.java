@@ -9,12 +9,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class PatchStudentRequestDto 
-{
+public class PatchStudentRequestDto {
     @NotNull
     private Integer studentNumber;
     @NotBlank
     private String address;
 }
-
-// !!!완료

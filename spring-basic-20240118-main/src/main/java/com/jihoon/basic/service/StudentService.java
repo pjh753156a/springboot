@@ -8,6 +8,5 @@ import com.jihoon.basic.dto.request.student.PostStudentRequestDto;
 public interface StudentService {
     ResponseEntity<String> postStudent(PostStudentRequestDto dto);
     ResponseEntity<String> patchStudent(PatchStudentRequestDto dto);
-    ResponseEntity<String> deleteStudent(Integer studentNumver);
+    ResponseEntity<String> deleteStudent(Integer studentNumber);
 }
-// !!!완료

@@ -26,4 +26,3 @@ public class PostStudentRequestDto {
     private Boolean graduation;
 
 }
-// !!!완료
