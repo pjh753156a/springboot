@@ -102,4 +102,6 @@ extends JpaRepository<StudentEntity, Integer> {
         @Param("age") Integer age
     );
 
+    // ???
+    StudentEntity findByStudentNumber(Integer studentNumber);
 }
