@@ -7,7 +7,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import com.jihoon.basic.entity.CustomOAuth2User;
 
-// OAuth2.0 인증 결과를 비즈니스 로직에 사용하는 서비스
+// OAuth2.0 인증 결과를 비즈니스 로직에 사용하는 서비스 !!!!!!!!!!!!!!!!!!???
 // DefaultOAuth2UserService를 확장하여 작성
 public class OAuth2UserServiceImplement extends DefaultOAuth2UserService
 {
